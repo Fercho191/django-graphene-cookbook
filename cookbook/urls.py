@@ -18,11 +18,14 @@ from django.contrib import admin
 from graphene_django.views import GraphQLView
 
 # from cookbook.schema import schema
+from ingredients.views import PrivateGraphQLView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^graphql', PrivateGraphQLView.as_view(graphiql=True)),
+
     # Enable graphiQL in graphql endpoint, see more https://github.com/graphql/graphiql
-    url(r'^graphql', GraphQLView.as_view(graphiql=True)),
+    # url(r'^graphql', GraphQLView.as_view(graphiql=True)),
     # If we did not specify the target schema in the Django settings file as explained above, we can do so here using:
     # url(r'^graphql', GraphQLView.as_view(graphiql=True, schema=schema)),
 ]
