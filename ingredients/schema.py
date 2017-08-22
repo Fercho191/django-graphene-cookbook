@@ -31,34 +31,3 @@ class Query(AbstractType):
 
     ingredient = relay.Node.Field(IngredientNode)
     all_ingredients = DjangoFilterConnectionField(IngredientNode)
-
-    # def resolve_category(self, args, context, info):
-    #     id = args.get('id')
-    #     name = args.get('name')
-    #
-    #     if id is not None:
-    #         return Category.objects.get(pk=id)
-    #
-    #     if name is not None:
-    #         return Category.objects.get(name=name)
-    #
-    #     return None
-    #
-    # def resolve_all_categories(self, args, context, info):
-    #     return Category.objects.all()
-    #
-    # def resolve_ingredient(self, args, context, info):
-    #     id = args.get('id')
-    #     name = args.get('name')
-    #
-    #     if id is not None:
-    #         return Ingredient.objects.get(pk=id)
-    #
-    #     if name is not None:
-    #         return Ingredient.objects.get(name=name)
-    #
-    #     return None
-    #
-    # def resolve_all_ingredients(self, args, context, info):
-    #     # We can easily optimize query count in the resolve method
-    #     return Ingredient.objects.select_related('category').all()
