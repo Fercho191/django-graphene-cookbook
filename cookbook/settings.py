@@ -75,7 +75,10 @@ WSGI_APPLICATION = 'cookbook.wsgi.application'
 
 # GraphQL Schema
 GRAPHENE = {
-    'SCHEMA': 'cookbook.schema.schema'
+    'SCHEMA': 'cookbook.schema.schema',
+    'MIDDLEWARE': [
+        'graphene_django.debug.DjangoDebugMiddleware',
+    ]
 }
 
 
