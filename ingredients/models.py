@@ -15,6 +15,7 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=100)
     notes = models.TextField()
     category = models.ForeignKey(Category, related_name='ingredients')
+    available = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name
