@@ -3,6 +3,7 @@ from graphene import relay, AbstractType
 from graphene_django.filter import DjangoFilterConnectionField
 
 from ingredients.models import Ingredient
+from ingredients.mutations import CreateCategory
 from ingredients.nodes import CategoryNode, IngredientNode
 
 
@@ -21,3 +22,6 @@ class Query(AbstractType):
         else:
             return Ingredient.objects.filter(available=True)
         # return Ingredient.objects.filter(available=True)
+
+class Mutation(AbstractType):
+    create_category = CreateCategory.Field()
