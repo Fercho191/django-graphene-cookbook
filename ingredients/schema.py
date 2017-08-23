@@ -3,7 +3,7 @@ from graphene import relay, AbstractType
 from graphene_django.filter import DjangoFilterConnectionField
 
 from ingredients.models import Ingredient
-from ingredients.mutations import CreateCategory
+from ingredients.mutations import CreateCategory, CreateIngredient
 from ingredients.nodes import CategoryNode, IngredientNode
 
 
@@ -25,3 +25,4 @@ class Query(AbstractType):
 
 class Mutation(AbstractType):
     create_category = CreateCategory.Field()
+    create_ingredient = CreateIngredient.Field()
